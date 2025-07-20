@@ -16,21 +16,18 @@
   background-color: lightcoral;
   border-radius: 50%;
   opacity: 0;
-
   z-index: 0;
+
 }
 
 body,
 html {
   height: 100%;
   width: 100%;
-  font-family: Futura;
-  overflow: hidden;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-.svg2{
-  opacity: 1;
-}
+
 .nav {
   position: fixed;
   width: 100%;
@@ -43,6 +40,13 @@ html {
  
   z-index:10;
   color: black;
+}
+
+.logo svg{
+  display:block;
+}
+.logo{
+  height: 82px;
   overflow: hidden;
 }
 
@@ -61,9 +65,25 @@ html {
   justify-content: flex-start;
   gap:45px;
   margin-left:auto ;
+
 }
+.new{
+  color: #000000;
+  opacity: 1;
+  position: relative;
+  
 
-
+}
+.new::after{
+  content: "";
+  background-color:#000000 ;
+  height: 2px;
+  width: 0%;
+  position: absolute;
+  top: 90%;
+  left:0%;
+  transition:all 0.4s ease;
+}
 
 .list a{
 text-decoration: none;
@@ -71,6 +91,16 @@ color: #000000;
 
 }
 
+
+.new:hover{
+opacity:0.5;
+width:100%;
+
+}
+.new:hover::after{
+  width: 100%;
+
+}
 .main {
   overflow: hidden; /* NOT auto */
   position: relative;

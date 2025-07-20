@@ -2,6 +2,8 @@ const videoContEL = document.querySelector(".video-container");
 const playBtn = document.querySelector(".play");
 const Page3 = document.querySelector(".page3");
 const cursorbtn =document.querySelector(".cursor")
+ var timeline1=gsap.timeline()
+
 function locomotiveAnimation(){
   gsap.registerPlugin(ScrollTrigger);
 
@@ -38,19 +40,12 @@ ScrollTrigger.refresh();
 
 }
 locomotiveAnimation();
-
 function navfunc(){
-  var timeline1=gsap.timeline()
- timeline1.from(".logo svg",{
-    y:20,
-    duration:0.8,
-    opacity:0,
+ 
 
-  })
   timeline1.from(".list a",{
-    y:20,
+    y:-200,
     duration:0.3,
-    opacity:0,
 
   })
   timeline1.from(".nav-part2 i",{
@@ -84,11 +79,12 @@ function mousepicEffect() {
     });
   });
 }
-gsap.from(".page1 h1", {
+function page1Animation(){
+  timeline1.from(".page1 h1", {
   y: 30,
   opacity: 0,
   delay: 0.6,
-  duration: 0.9,
+  duration: 0.5,
   stagger: 0.2,
 });
 gsap.from(".page1  .video-container", {
@@ -97,6 +93,11 @@ gsap.from(".page1  .video-container", {
   delay: 0.5,
   duration: 0.9,
 });
+}
+page1Animation();
+function mousenavEffect(){
+
+
 Page3.addEventListener("mouseenter",function(){
 gsap.to(cursorbtn,{
   opacity:0.3,
@@ -119,5 +120,34 @@ gsap.to(cursorbtn,{
       top: dets.y - 50,
     });
   });
+}
+mousenavEffect();
+function navanimations(){
+ gsap.to(".logo svg", {
+  y: "-100%",
+  scrollTrigger: {
+    trigger: ".page1",
+    scroller: ".main",
+    start: "top top",
+    end: "top -5%",
+    scrub: true,
+  },
+});
+
+// ✅ Hide .list .new on scroll
+gsap.to(".list a", {
+  y: "-100%",
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".page1",
+    scroller: ".main",
+    start: "top top",
+    end: "top -5%",
+    scrub: true,
+  },
+});
+}
+navanimations();
 mousepicEffect();
+
 
