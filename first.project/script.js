@@ -2,10 +2,66 @@ const videoContEL = document.querySelector(".video-container");
 const playBtn = document.querySelector(".play");
 const Page3 = document.querySelector(".page3");
 const cursorbtn =document.querySelector(".cursor")
-const scroll = new LocomotiveScroll({
+function locomotiveAnimation(){
+  gsap.registerPlugin(ScrollTrigger);
+
+// Using Locomotive Scroll from Locomotive https://github.com/locomotivemtl/locomotive-scroll
+
+const locoScroll = new LocomotiveScroll({
   el: document.querySelector(".main"),
-  smooth: true,
+  smooth: true
 });
+// each time Locomotive Scroll updates, tell ScrollTrigger to update too (sync positioning)
+locoScroll.on("scroll", ScrollTrigger.update);
+
+// tell ScrollTrigger to use these proxy methods for the ".main" element since Locomotive Scroll is hijacking things
+ScrollTrigger.scrollerProxy(".main", {
+  scrollTop(value) {
+    return arguments.length ? locoScroll.scrollTo(value, 0, 0) : locoScroll.scroll.instance.scroll.y;
+  }, // we don't have to define a scrollLeft because we're only scrolling vertically.
+  getBoundingClientRect() {
+    return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
+  },
+  // LocomotiveScroll handles things completely differently on mobile devices - it doesn't even transform the container at all! So to get the correct behavior and avoid jitters, we should pin things with position: fixed on mobile. We sense it by checking to see if there's a transform applied to the container (the LocomotiveScroll-controlled element).
+  pinType: document.querySelector(".main").style.transform ? "transform" : "fixed"
+});
+
+
+
+
+
+// each time the window updates, we should refresh ScrollTrigger and then update LocomotiveScroll. 
+ScrollTrigger.addEventListener("refresh", () => locoScroll.update());
+
+// after everything is set up, refresh() ScrollTrigger and update LocomotiveScroll because padding may have been added for pinning, etc.
+ScrollTrigger.refresh();
+
+}
+locomotiveAnimation();
+
+function navfunc(){
+  var timeline1=gsap.timeline()
+ timeline1.from(".logo svg",{
+    y:20,
+    duration:0.8,
+    opacity:0,
+
+  })
+  timeline1.from(".list a",{
+    y:20,
+    duration:0.3,
+    opacity:0,
+
+  })
+  timeline1.from(".nav-part2 i",{
+    y:20,
+    duration:0.5,
+    opacity:0,
+
+  })
+
+}
+navfunc()
 
 function mousepicEffect() {
   videoContEL.addEventListener("mouseenter", function () {
@@ -42,7 +98,6 @@ gsap.from(".page1  .video-container", {
   duration: 0.9,
 });
 Page3.addEventListener("mouseenter",function(){
-  console.log("entered");
 gsap.to(cursorbtn,{
   opacity:0.3,
   zIndex:9,
@@ -65,3 +120,4 @@ gsap.to(cursorbtn,{
     });
   });
 mousepicEffect();
+

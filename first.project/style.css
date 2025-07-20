@@ -27,9 +27,12 @@ html {
   font-family: Futura;
   overflow: hidden;
 }
+
+.svg2{
+  opacity: 1;
+}
 .nav {
   position: fixed;
-  height:106px;
   width: 100%;
   display: flex;
   justify-items: center;
@@ -37,9 +40,12 @@ html {
   align-items: center;
   color:#000000;
   gap: 20px;
+ 
   z-index:10;
   color: black;
+  overflow: hidden;
 }
+
 .nav-part2{
   display:flex;
   width: 14%;
@@ -48,13 +54,15 @@ html {
   height:50px;
   align-items: center;
   border-radius:10px;
+   margin-top:0px;
 }
 .list{
   display: flex;
+  justify-content: flex-start;
   gap:45px;
   margin-left:auto ;
-  
 }
+
 
 
 .list a{
@@ -265,6 +273,11 @@ h6 {
 #child6 {
   background-size: cover;
   margin-top: 150px;
+}
+.page4{
+  min-height:100vh;
+  width:100%;
+  margin-top: 200px;
 }
 
 @media (max-width: 768px) {
