@@ -2,6 +2,9 @@ const videoContEL = document.querySelector(".video-container");
 const playBtn = document.querySelector(".play");
 const Page3 = document.querySelector(".page3");
 const cursorbtn = document.querySelector(".cursor");
+  const containerinput=document.querySelector(".headandsymbol");
+   const inputcont=document.querySelector("#input1");
+   console.log(inputcont)
 var timeline1 = gsap.timeline();
 
 function locomotiveAnimation() {
@@ -174,3 +177,18 @@ function newanimation() {
   });
 }
 newanimation();
+function emailFunction(){ 
+    console.log("it is")
+
+  inputcont.classList.remove("hideIt");
+  gsap.from("#input1", {
+    x: "-100%",
+    duration: 1.8,
+    delay: 0.2
+  });
+}
+
+
+
+  containerinput.addEventListener("click",emailFunction);
+

@@ -42,7 +42,6 @@ html {
 
 .logo svg {
   display: block;
-
 }
 .logo {
   height: 82px;
@@ -322,58 +321,69 @@ h6 {
   margin-top: 200px;
   padding: 1rem;
 }
-.headandsymbol h3{
-font-size:4vw;
-border-bottom:4px solid black ;
+.headandsymbol h3 {
+  font-size: 4vw;
+  border-bottom: 4px solid black;
+  cursor: pointer;
 }
-.pageMain{
-  gap:20px;
+.pageMain {
+  gap: 20px;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: row;
   padding-top: 40vh;
   justify-content: space-between;
 }
-.firstlist{
-display: flex;
-flex-direction: column;
-gap:7px;
+.firstlist {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
   align-items: flex-start;
-  justify-content:flex-start;
+  justify-content: flex-start;
 }
-.secondList{
+.secondList {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  justify-content:flex-start;
-  gap:7px;
-  
+  justify-content: flex-start;
+  gap: 7px;
 }
 
-.firstlist a{
+.firstlist a {
   text-decoration: none;
   color: #000000;
-
 }
-.firstlist p{
+.firstlist p {
   color: grey;
 }
-.secondList a{
+.secondList a {
   text-decoration: none;
   color: #000000;
   margin-left: auto;
 }
-.secondList p{
+.secondList p {
   color: grey;
   margin-left: auto;
 }
-.mainLogo img{
-  height:38vh;
-
+.mainLogo img {
+  height: 38vh;
 }
+#input1 {
+  width: 50%;
+  height: 50px;
+  margin-top: 12px;
+  color:white;
+  font-size: 24px;
+ background-color: #000000;
+}
+.hideIt{
 
+  opacity: 0;
+}
 
 @media (max-width: 768px) {
-  .page1{
+  .page1 {
     min-height: 400px;
     overflow: hidden;
   }
@@ -417,126 +427,123 @@ gap:7px;
     background-size: cover;
     background-position: center;
   }
- 
 
-.logo {
-  height: 82px;
-  overflow: hidden;
-}
+  .logo {
+    height: 82px;
+    overflow: hidden;
+  }
 
-.nav-part2 {
-  display: flex;
-  width: 34%;
+  .nav-part2 {
+    display: flex;
+    width: 34%;
 
+    height: 50px;
+  }
+  .list {
+    display: none;
+  }
+  .page3 {
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .child {
+    height: auto;
+    min-width: 75vw;
+
+    margin: 5px;
+    flex-direction: column;
+    padding-top: 1rem;
+  }
+  .child img {
+    width: 60vw;
+  }
+  #child1 {
+    font-size: 3.5vw;
+    font-weight: 900;
+    line-height: 7vw;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+  }
+  #child2 {
+    font-weight: 500;
+    font-size: 5vw;
+
+    gap: 10px;
+  }
+
+  #child2,
+  h5 {
+    line-height: 5vw;
+    font-size: 4vw;
+    margin-top: 7px;
+  }
+  #child2,
+  h6 {
+    line-height: 5vw;
+    font-size: 4vw;
+  }
+
+  #child3 {
+    background-size: cover;
+    margin-top: 5px;
+  }
+  #child4 {
+    margin-top: 40px;
+  }
+
+  #child5 {
+    margin-top: 100px;
+  }
+  #child6 {
+    margin-top: 0px;
+  }
+  .page4 {
+    min-height: 100vh;
+    width: 100%;
+    margin-top: 40px;
+    padding: 1rem;
+  }
+  .headandsymbol h3 {
+    font-size: 4vw;
+    border-bottom: 4px solid black;
+  }
+  .pageMain {
+    gap: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding-top: 13vh;
+  }
+  .firstlist {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+  }
+  .secondList {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-20%, 0%);
+    gap: 7px;
+  }
+
+  .secondList p {
+    margin-top: 29px;
+  }
+  .mainLogo img {
+    height: 28vh;
+  }
+  #input1 {
+  width: 70%;
   height: 50px;
- 
-}
-.list {
-  display: none;
-}
-.page3 {
-
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.child {
-  height:auto;
-  min-width: 75vw;
-  
-  margin: 5px;
-  flex-direction: column;
-  padding-top: 1rem;
-}
-.child img {
-  width: 60vw;
-}
-#child1 {
-  font-size: 3.5vw;
-  font-weight: 900;
-  line-height: 7vw;
-  letter-spacing: -1px;
-  text-transform: uppercase;
-}
-#child2 {
-  font-weight: 500;
-  font-size: 5vw;
-  
-  gap: 10px;
-
-}
-
-#child2,
-h5 {
-  line-height: 5vw;
-  font-size: 4vw;
-  margin-top: 7px;
-}
-#child2,
-h6 {
-  line-height: 5vw;
-  font-size: 4vw;
-}
-
-#child3 {
-  background-size: cover;
-  margin-top: 5px;
-}
-#child4 {
-
-  margin-top: 40px;
-}
-
-#child5 {
-  margin-top: 100px;
-}
-#child6 {
-  margin-top: 0px;
-}
-.page4 {
-  min-height: 100vh;
-  width: 100%;
-  margin-top: 40px;
-  padding: 1rem;
-}
-.headandsymbol h3{
-font-size:4vw;
-border-bottom:4px solid black ;
-}
-.pageMain{
-  gap:20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding-top: 13vh;
-}
-.firstlist{
-display: flex;
-align-items: center;
-justify-content: center;
-gap:7px;
- 
-}
-.secondList{
-display: flex;
-align-items: center;
-justify-content: center;
-transform: translate(-20%,0%);
-  gap:7px;
-  
-}
-
-
-.secondList p{
-  
-  margin-top: 29px;
-}
-.mainLogo img{
-  height:28vh;
-
-
+  margin-top: 12px;
+  color:white;
+  font-size: 14px;
+ background-color: #000000;
 }
 }
