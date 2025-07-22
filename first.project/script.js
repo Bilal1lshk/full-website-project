@@ -2,10 +2,14 @@ const videoContEL = document.querySelector(".video-container");
 const playBtn = document.querySelector(".play");
 const Page3 = document.querySelector(".page3");
 const cursorbtn = document.querySelector(".cursor");
-  const containerinput=document.querySelector(".headandsymbol");
-   const inputcont=document.querySelector("#input1");
-   console.log(inputcont)
+const containerinput = document.querySelector(".headandsymbol");
+const inputcont = document.querySelector("#input1");
+const menuconel = document.querySelector("#toggleSidebar1");
+const mainEl = document.querySelector(".main");
+const crossel = document.querySelector("#toggleSidebar2");
+const sideBarel = document.querySelector(".sideBar");
 var timeline1 = gsap.timeline();
+console.log(menuconel);
 
 function locomotiveAnimation() {
   gsap.registerPlugin(ScrollTrigger);
@@ -177,18 +181,38 @@ function newanimation() {
   });
 }
 newanimation();
-function emailFunction(){ 
-    console.log("it is")
+function emailFunction() {
+  console.log("it is");
 
   inputcont.classList.remove("hideIt");
   gsap.from("#input1", {
     x: "-100%",
     duration: 1.8,
-    delay: 0.2
+    delay: 0.2,
   });
 }
 
+function crossfunc() {
+   sideBarel.style.visibility = "hidden";
+sideBarel.style.display = "none";
+  gsap.to(".sideBar", {
+    opacity: 0,
+    duration: 1,
+  });
+}
+function sideBarfunc() {
+ 
+console.log("it is")
+ sideBarel.style.visibility = "visible";
+sideBarel.style.display = "block";
+  gsap.to(".sideBar", {
+    duration: 1.2,
+    delay: 0,
+    opacity: 1,
 
+  });
+}
 
-  containerinput.addEventListener("click",emailFunction);
-
+containerinput.addEventListener("click", emailFunction);
+menuconel.addEventListener("click", sideBarfunc);
+crossel.addEventListener("click", crossfunc);
